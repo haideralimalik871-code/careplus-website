@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CarePlus | Healthcare Services</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7fbfc;
+    color: #183044;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.navbar {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #17324d;
+}
+
+.logo span {
+    color: #16a896;
+}
+
+.logo-icon {
+    background: #16a896;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #536577;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #16a896;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    background: #16a896;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #10897c;
+    transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+    padding: 90px 0;
+    background: linear-gradient(135deg, #f1fbfa, #ffffff);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.badge {
+    display: inline-block;
+    background: #dff7f3;
+    color: #10897c;
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #16a896;
+}
+
+.hero p {
+    color: #68798a;
+    font-size: 17px;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.outline {
+    background: transparent;
+    color: #16a896;
+    border: 2px solid #16a896;
+}
+
+.outline:hover {
+    background: #16a896;
+    color: white;
+}
+
+/* HERO IMAGE / DESIGN */
+.hero-image {
+    height: 430px;
+    background: linear-gradient(145deg, #c9f1ec, #83d7cc);
+    border-radius: 40% 40% 45% 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(22,168,150,0.18);
+}
+
+.medical-symbol {
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #16a896;
+    font-size: 110px;
+    font-weight: 200;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.floating {
+    position: absolute;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.float-one {
+    top: 55px;
+    right: -15px;
+}
+
+.float-two {
+    bottom: 60px;
+    left: -15px;
+}
+
+/* SERVICES */
+.services {
+    padding: 100px 0;
+    background: white;
+}
+
+.heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 55px;
+}
+
+.heading small {
+    color: #16a896;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.heading h2 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.heading h2 span {
+    color: #16a896;
+}
+
+.heading p {
+    color: #718092;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service {
+    padding: 30px;
+    border: 1px solid #e6eeee;
+    border-radius: 15px;
+    transition: 0.3s;
+    background: white;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border-color: #bce8e2;
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+    background: #e4f8f5;
+    color: #16a896;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #718092;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.service a {
+    color: #16a896;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* STATS */
+.stats {
+    padding: 55px 0;
+    background: #102b43;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+}
+
+.stat h2 {
+    color: #4ed0c0;
+    font-size: 35px;
+}
+
+.stat p {
+    color: #aebbc7;
+    font-size: 13px;
+}
+
+/* APPOINTMENT */
+.appointment {
+    padding: 90px 0;
+}
+
+.appointment-box {
+    background: linear-gradient(120deg, #16a896, #10897c);
+    color: white;
+    padding: 55px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.appointment-box h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin: 8px 0 15px;
+}
+
+.appointment-box p {
+    color: #d9fffa;
+    max-width: 550px;
+}
+
+.white {
+    background: white;
+    color: #10897c;
+}
+
+.white:hover {
+    background: #effffc;
+}
+
+/* FOOTER */
+footer {
+    background: #091d31;
+    color: white;
+    padding-top: 65px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-grid h3 {
+    margin-bottom: 15px;
+}
+
+.footer-grid h4 {
+    margin-bottom: 15px;
+}
+
+.footer-grid p,
+.footer-grid a {
+    display: block;
+    color: #91a0af;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.footer-grid a:hover {
+    color: #4ed0c0;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #1d3347;
+    padding: 20px;
+    color: #6f7f90;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        height: 330px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .appointment-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .appointment-box {
+        padding: 35px 25px;
+    }
+
+    .appointment-box h2 {
+        font-size: 28px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="container navbar">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">+</span>
+            Care<span>Plus</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#appointment" class="btn">
+            Book Now
+        </a>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div>
+            <div class="badge">
+                ● Trusted Healthcare Services
+            </div>
+
+            <h1>
+                Healthcare
+                <span>Made Simple.</span>
+            </h1>
+
+            <p>
+                CarePlus provides trusted medical services,
+                professional home healthcare, nursing,
+                physiotherapy and personalized patient care.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#appointment" class="btn">
+                    Book a Service →
+                </a>
+
+                <a href="#services" class="btn outline">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="medical-symbol">
+                +
+            </div>
+
+            <div class="floating float-one">
+                ✓ Qualified Doctors
+            </div>
+
+            <div class="floating float-two">
+                🏠 Home Healthcare
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="heading">
+
+            <small>OUR SERVICES</small>
+
+            <h2>
+                Complete <span>Healthcare</span>
+                For You
+            </h2>
+
+            <p>
+                Professional healthcare services designed
+                around you and your family's needs.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service">
+                <div class="icon">⚕</div>
+                <h3>Doctor Consultation</h3>
+                <p>
+                    Get professional medical consultations
+                    from qualified healthcare professionals.
+                </p>
+                <a href="#">Learn More →</a>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🏠</div>
+                <h3>Home Healthcare</h3>
+                <p>
+                    Professional healthcare services
+                    delivered directly to your home.
+                </p>
+                <a href="#">Learn More →</a>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🧑‍⚕️</div>
+                <h3>Nursing Care</h3>
+                <p>
+                    Experienced nurses providing
+                    personalized patient care.
+                </p>
+                <a href="#">Learn More →</a>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🧪</div>
+                <h3>Lab Tests</h3>
+                <p>
+                    Convenient diagnostic services and
+                    home sample collection.
+                </p>
+                <a href="#">Learn More →</a>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🧓</div>
+                <h3>Elderly Care</h3>
+                <p>
+                    Compassionate care and support
+                    for elderly family members.
+                </p>
+                <a href="#">Learn More →</a>
+            </div>
+
+
+            <div class="service">
+                <div class="icon">🦴</div>
+                <h3>Physiotherapy</h3>
+                <p>
+                    Professional rehabilitation and
+                    physiotherapy at home.
+                </p>
+                <a href="#">Learn More →</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats" id="about">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <h2>10K+</h2>
+            <p>Patients Served</p>
+        </div>
+
+        <div class="stat">
+            <h2>150+</h2>
+            <p>Healthcare Professionals</p>
+        </div>
+
+        <div class="stat">
+            <h2>25+</h2>
+            <p>Healthcare Services</p>
+        </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>Patient Support</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+<section class="appointment" id="appointment">
+
+    <div class="container appointment-box">
+
+        <div>
+
+            <small>NEED MEDICAL CARE?</small>
+
+            <h2>
+                We're Here When
+                You Need Us.
+            </h2>
+
+            <p>
+                Book a healthcare service today and let
+                CarePlus take care of you and your family.
+            </p>
+
+        </div>
+
+        <a href="#" class="btn white">
+            Book Appointment →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    <div class="container footer-grid">
+
+        <div>
+            <h3>Care<span style="color:#4ed0c0;">Plus</span></h3>
+
+            <p>
+                Making quality healthcare accessible,
+                convenient and personal.
+            </p>
+        </div>
+
+
+        <div>
+            <h4>Services</h4>
+            <a href="#">Doctor Consultation</a>
+            <a href="#">Home Healthcare</a>
+            <a href="#">Nursing Care</a>
+            <a href="#">Lab Tests</a>
+        </div>
+
+
+        <div>
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Doctors</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </div>
+
+
+        <div>
+            <h4>Contact</h4>
+            <p>📍 Your City, Pakistan</p>
+            <p>📞 +92 300 0000000</p>
+            <p>✉️ hello@careplus.com</p>
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 CarePlus. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
